@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  max-width: 343px; 
+  padding: 16px;
+  gap: 16px;
+  border: 1px solid #afafaf;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 0 auto; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-container:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+}
+
+.product-brand {
+  font-size: 12px;
+  color: #696969;
+}
+
+.product-title {
+  font-size: 14px;
+  color: #333;
+}
+
+.product-price-new,
+.product-price-used {
+  font-size: 20px;
+}
+
+.product-price-new {
+  color: #bf0000;
+  padding-top: 8px;
+}
+
+.product-price-used {
+  color: #333;
+}
+
+#neuf-text,
+#occasion-text {
+  font-size: 12px;
+}
+
+#occasion-text {
+  font-weight: normal;
+}
+
+.product-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  .product-image img {
+    width: 100%; 
+    height: auto; 
+    max-width: 200px; 
+  }
+
+  .product-details {
+    align-items: center; 
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .product-brand {
+    font-size: 11px;
+  }
+
+  .product-title {
+    font-size: 13px;
+  }
+
+  .product-price-new,
+  .product-price-used {
+    font-size: 18px;
+  }
+
+  #neuf-text,
+  #occasion-text {
+    font-size: 11px;
+  }
+}

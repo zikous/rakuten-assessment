@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application that displays a `ProductCard` component. The component showcases product details such as the brand name, product title, price (both new and used), and an image. The application is fully responsive, ensuring it works seamlessly on various screen sizes, from mobile to desktop. Below is an explanation of the approach taken for the code and the responsive design.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+0. [Answers to Questions](#answers-to-questions)  
+1. [How to Launch and Set Up the Project](#how-to-launch-and-set-up-the-project)  
+2. [Approach to the Code](#approach-to-the-code)  
+3. [Responsive Design Approach](#responsive-design-approach)  
+4. [Conclusion](#conclusion)
 
-### `npm start`
+## Answers to Questions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The answers to the assessment questions can be found in the file `rakuten_questions.pdf` located in the repository. Please refer to this document for detailed responses.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to Launch and Set Up the Project
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js and npm installed on your machine.
 
-### `npm run build`
+### Steps to Run the Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository**  
+    Clone the repository to your local machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install Dependencies**  
+    Install the required dependencies using npm.
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. **Run the Project**  
+    Start the development server.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. **View the Application**  
+    Open your browser and navigate to `http://localhost:3000` to see the `ProductCard` in action.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## Approach to the Code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### App Component
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The `App` component serves as the entry point of the application. It defines a `productDetails` object containing the product data, such as the brand name, product title, price, and image URL. This data is passed as a prop to the `ProductCard` component, which handles the rendering of the product details.
+
+### ProductCard Component
+
+The `ProductCard` component is designed to display the product details in a structured and visually appealing way. It takes a `product` prop and checks if all required fields (e.g., `brandName`, `productTitle`, `newPrice`, `imageUrl`) are present. If any required field is missing, the component returns `null` and renders nothing. This ensures robustness and prevents errors when incomplete data is provided.
+
+The component is divided into two main sections:
+
+1. **Product Image**: Displays the product image with a link to the product page.  
+2. **Product Details**: Shows the brand name, product title, new price, and used price (if available). The used price is conditionally rendered, ensuring it only appears when provided.
+
+### CSS Styling
+
+The styling is done using a CSS file (`ProductCard.css`). The design uses the Poppins font from Google Fonts for a modern look. The card has a clean layout with a hover effect that slightly lifts the card and adds a shadow, enhancing user interaction. The styling ensures the card is visually consistent and professional.
+
+---
+
+## Responsive Design Approach
+
+The application is designed to be fully responsive, adapting to different screen sizes. Here’s how the responsive design was implemented:
+
+1. **Mobile-First Approach**  
+    The default layout is optimized for mobile devices. The card uses a column layout on smaller screens, with the image and details stacked vertically. This ensures readability and usability on small screens.
+
+2. **Media Queries**  
+    Two breakpoints are used to adjust the layout and font sizes for different screen sizes:
+    - **Tablet (max-width: 768px)**: The card switches to a column layout, and the image is centered with a maximum width.
+    - **Mobile (max-width: 480px)**: Font sizes are reduced slightly to fit smaller screens, and padding/gaps are adjusted for better spacing.
+
+3. **Flexible Image Sizing**  
+    The product image is set to be responsive, scaling proportionally based on the screen width. On smaller screens, the image takes up the full width of the container, while on larger screens, it maintains a fixed size.
+
+4. **Hover Effects**  
+    On larger screens, the card includes a hover effect that lifts the card and adds a shadow, providing a subtle interactive element. This effect is disabled on smaller screens to ensure a smooth user experience.
+
+---
+
+## Conclusion
+
+This project demonstrates a clean and responsive implementation of a `ProductCard` component using React. The code is structured to ensure robustness, and the design is optimized for various screen sizes, providing a seamless user experience.

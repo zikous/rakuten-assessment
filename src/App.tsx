@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ProductCard from './components/ProductCard';
+import { Product } from './types/types';
 
-function App() {
+const App = () => {
+  const productDetails: Product = {
+    brandName: "Apple",
+    productLink: "/mfp/9623007/apple-iphone-15?pid=11517874360",
+    productTitle: "Apple iPhone 11 128 Go Double SIM Noir Sidéral",
+    newPrice: "754 €",
+    usedPrice: "720,99 €",
+    imageUrl: "https://fr.shopping.rakuten.com/photo/4075345048_ML_NOPAD.jpg",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ProductCard product={productDetails} />  
     </div>
   );
-}
+};
 
 export default App;
