@@ -26,8 +26,8 @@ The answers to the assessment questions can be found in the file `rakuten_questi
     Clone the repository to your local machine.
 
     ```bash
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone https://github.com/zikous/rakuten-assessment
+    cd rakuten-assessment
     ```
 
 2. **Install Dependencies**  
