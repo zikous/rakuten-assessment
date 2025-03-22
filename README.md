@@ -8,7 +8,8 @@ This project is a React application that displays a `ProductCard` component. The
 1. [How to Launch and Set Up the Project](#how-to-launch-and-set-up-the-project)  
 2. [Approach to the Code](#approach-to-the-code)  
 3. [Responsive Design Approach](#responsive-design-approach)  
-4. [Conclusion](#conclusion)
+4. [Testing](#testing)
+5. [Conclusion](#conclusion)
 
 ## Answers to Questions
 
@@ -72,7 +73,7 @@ The styling is done using a CSS file (`ProductCard.css`). The design uses the Po
 
 ## Responsive Design Approach
 
-The application is designed to be fully responsive, adapting to different screen sizes. Here’s how the responsive design was implemented:
+The application is designed to be fully responsive, adapting to different screen sizes. Here's how the responsive design was implemented:
 
 1. **Mobile-First Approach**  
     The default layout is optimized for mobile devices. The card uses a column layout on smaller screens, with the image and details stacked vertically. This ensures readability and usability on small screens.
@@ -90,6 +91,33 @@ The application is designed to be fully responsive, adapting to different screen
 
 ---
 
+## Testing
+
+The project includes unit tests using React Testing Library to ensure the proper functionality of the `ProductCard` component. The tests focus on verifying the component's behavior under different scenarios:
+
+1. **Empty or Invalid Data Handling**
+   - Verifies the component renders nothing when the product is undefined
+   - Tests that the component renders nothing when required fields (like price or image URL) are missing
+
+2. **Complete Product Rendering**
+   - Tests that all product information (brand name, title, prices, image) renders correctly when valid data is provided
+   - Verifies that links have the correct href attribute
+   - Ensures the image displays with the proper src and alt attributes
+
+3. **Conditional Rendering**
+   - Tests the conditional rendering of the used price section
+   - Confirms that when the used price is not provided, that section is not rendered
+
+The tests are implemented with React Testing Library and Jest, using query methods like `getByText`, `getByAltText`, and `getByRole` to verify the presence and correctness of elements.
+
+To run the tests, use the following command:
+
+```bash
+npm test
+```
+
+---
+
 ## Conclusion
 
-This project demonstrates a clean and responsive implementation of a `ProductCard` component using React. The code is structured to ensure robustness, and the design is optimized for various screen sizes, providing a seamless user experience.
+This project demonstrates a clean and responsive implementation of a `ProductCard` component using React. The code is structured to ensure robustness, and the design is optimized for various screen sizes, providing a seamless user experience. Unit tests verify the component's behavior, ensuring it handles both valid and invalid data appropriately and renders all product information correctly.
